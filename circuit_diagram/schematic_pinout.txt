@@ -1,0 +1,36 @@
+===================================================================
+SMART HOME ENERGY MONITORING SYSTEM - HARDWARE WIRING SPECIFICATION
+===================================================================
+
+[1] SYSTEM CONTROLLER (ESP32 DevKitC)
+    - Power Input (VBUS) ----> +5V USB Input / Vin
+    - System Ground ---------> Common Ground Rail (GND)
+
+[2] NON-INVASIVE CURRENT SENSOR (SCT-013-050)
+    - Sleeve Terminal -------> ESP32 GND
+    - Tip Terminal ----------> ESP32 GPIO34 via 100k Ohm Protection Resistor
+    - Bias Node Grid --------> Connected to +1.65V DC Voltage Divider Rail
+                               (Formed via two 10k Ohm resistors across 3.3V)
+
+[3] VOLTAGE TRANSFORMER MODULE (ZMPT101B)
+    - VCC Pin --------------> ESP32 5V (Vin) Pin
+    - GND Pin --------------> ESP32 GND
+    - Analog Out (Ao) ------> ESP32 GPIO35 (Analog Input channel)
+
+[4] 5V OPTOCUPLER ISOLATED RELAY
+    - VCC Pin --------------> ESP32 5V (Vin) Pin
+    - GND Pin --------------> ESP32 GND
+    - Signal Control IN ----> ESP32 GPIO25 (Digital Active-Low Output)
+
+[5] HARDWARE ALARM AUDIO & SIGNALING INDICATORS
+    - Active Buzzer (+) ----> ESP32 GPIO26 (via 220 Ohm Current Limiting Resistor)
+    - Warning LED Anode ----> ESP32 GPIO27 (via 330 Ohm Current Limiting Resistor)
+    - Common Cathodes ------> ESP32 GND Rail
+
+===================================================================
+PRODUCTION CALIBRATION PARAMETERS
+===================================================================
+* Nominal Grid Voltage: 230.0V RMS AC
+* Overcurrent Trip Limit: 15.0 Amperes RMS
+* Analog Sampling Window: 200 milliseconds per cycle calculation loop
+===================================================================
