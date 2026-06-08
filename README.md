@@ -12,7 +12,21 @@ Traditional utility distribution grids obscure energy consumption metrics behind
 This project implements an **Edge-to-Cloud IoT telemetry loop** that monitors alternating current electrical parameters in real time. It calculates Root-Mean-Square (RMS) metrics, estimates ongoing electricity costs based on utility brackets, and features an automated circuit-breaker alert engine to isolate lines during overcurrent structural anomalies.
 
 ### Operational Data Pipeline Workflow
-Use code with caution.[Current & Voltage Sensors]↓[ESP32 Edge Processing (High-Speed Sampling & RMS Calculation)]↓[Secure Network Stream]↓[Cloud Dashboard Visualizations (ThingSpeak)]↓[Threshold Invariant Alert Engine]↓[Local Automated Analytics Data Reports (CSV / Formatting PDF)]
+
+```text
+  [Current & Voltage Sensors]
+              ↓
+  [ESP32 Edge Processing (High-Speed Sampling & RMS Calculation)]
+              ↓
+  [Secure Network Stream]
+              ↓
+  [Cloud Dashboard Visualizations (ThingSpeak)]
+              ↓
+  [Threshold Invariant Alert Engine]
+              ↓
+  [Local Automated Analytics Data Reports (CSV / Formatted PDF)]
+```
+
 ---
 
 ## 2⃣ Industry Relevance & Business Value
@@ -34,13 +48,23 @@ Real-time energy tracking systems are widely deployed across modern commercial s
 * **Audio Alarms & LEDs:** Provides sensory feedback (Buzzer & Red flashing indicators) when system states enter overcurrent boundaries.
 
 ### Virtual Simulation Layer
-For environments where hardware deployments are inaccessible, the system contains an alternate execution pathway via a Python engine. This engine models household appliance profiles, calculates dynamic electrical draws, triggers edge alarms, and automates corporate data audit workflows.
+For environments where hardware deployments are inaccessible, the system contains an alternate execution pathway via a Python engine. This engine models household appliance profiles, calculates dynamic electrical draws, triggers edge alerts, and automates corporate data audit workflows.
 
 ---
 
 ## 4⃣ Repository Directory Blueprint
 
-Smart-Home-Energy-Monitoring-System/├── arduino_code/          # C++ production micro-firmware for physical ESP32 nodes├── python_simulation/     # Executable virtual load engine simulation scripts (main.py)├── circuit_diagram/       # Structural hardware wiring wire-maps and specifications├── data/                  # Tabular runtime log records (energy_log.csv)├── reports/               # Automated corporate analytics audit report documents (PDF)├── images/                # Validation snapshots and portfolio media blocks└── requirements.txt       # Environment dependency manifest configuration
+```text
+Smart-Home-Energy-Monitoring-System/
+├── arduino_code/          # C++ production micro-firmware for physical ESP32 nodes
+├── python_simulation/     # Executable virtual load engine simulation scripts (main.py)
+├── circuit_diagram/       # Structural hardware wiring wire-maps and specifications
+├── data/                  # Tabular runtime log records (energy_log.csv)
+├── reports/               # Automated corporate analytics audit report documents (PDF)
+├── images/                # Validation snapshots and portfolio media blocks
+└── requirements.txt       # Environment dependency manifest configuration
+```
+
 ---
 
 ## 5⃣ Verification Outputs & Proof of Work
@@ -72,4 +96,4 @@ Follow these steps to run the simulation engine on your machine and generate the
    ```bash
    python python_simulation/main.py
    ```
-4. Open the `data/` and `reports/` folders to view your newly compiled analytics
+4. Open the `data/` and `reports/` folders to view your newly compiled analytics logs.
